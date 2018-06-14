@@ -4,4 +4,4 @@
  */
 var regExp = new RegExp();
 var str = "";
-console.log(regExp.test(srt));
+console.log(regExp.test(str));
