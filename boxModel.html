@@ -1,9 +1,44 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+<p>盒模型有两种：content-box和border-box，ie6-默认值为border-box，其他默认content-box（有人称之为标准模型和IE模型，赶脚这样叫不对，因为所有浏览器都能设置这两种模式，只不过默认值不同）,</p>
+<p>content-box模型width为content（内容部分）的宽度，border-box模型width为border + padding + content值得和。高度同理</p>
+<p>实例：测试两种模型的宽度。</p>
+<p>*补充一点在border-box盒模型下，width宽度取width和border + padding两者大值。border + padding值大，则content宽度被压缩为0。</p>
+<p>*ie7不兼容border-box，无论设置那种模式都按照conten-box的模式渲染</p>
+<p>*ie6-不兼容content-box，无论设置那种模式都按照border-box的模式渲染，有些文章中说解决IE8及更早版本不兼容问题可以在HTML页面声明 <!DOCTYPE html>即可。 but没明白啥意思，和说的不一样</p>
+<p>*ie6-环境下，border-box模型的content部分填充了内容，则容器被撑开，width的值增大。其他浏览器环境不会撑开。</p>
 
+<div style="width: 100px;
+            height: 100px;
+            padding: 20px;
+            border: 20px solid #ff0;
+            margin: 20px;
+            background: darkseagreen;
+            box-sizing: content-box;">
+    content-box
+</div>
+<div style="width: 100px;
+            height: 100px;
+            padding: 20px;
+            border: 20px solid #ff0;
+            margin: 20px;
+            background: darkseagreen;
+            box-sizing: border-box;">
+    border-box
+</div>
+<div style="width: 100px;
+            height: 100px;
+            padding: 25px;
+            border: 25px solid #ff0;
+            margin: 20px;
+            background: darkseagreen;
+            box-sizing: border-box;">
+    border-box
+</div>
 </body>
 </html>
